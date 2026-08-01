@@ -1,5 +1,8 @@
+"use client"
 import Link from "next/link";
 import { ModeToggle } from "../ui/ModeToggle";
+import { MoonIcon, SunIcon } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const navItems = [
     { name: "Intro", href: "/" },
@@ -10,6 +13,8 @@ const navItems = [
 ];
 
 export const NavigationBar = () => {
+    const { resolvedTheme, setTheme } = useTheme();
+    const isDark = resolvedTheme === "dark";
     return (
         <header className="fixed top-0 z-50 w-full flex justify-center backdrop-blur-md">
             <nav className="flex w-7xl px-8 h-16 justify-between items-center gap-4">
@@ -25,7 +30,12 @@ export const NavigationBar = () => {
                     ))}
                 </ul>
                 <div>
-                    <ModeToggle />
+                    <ModeToggle
+                        value={isDark}
+                        onToggle={() => setTheme(isDark ? "light" : "dark")}
+                        iconOff={<MoonIcon />}
+                        iconOn={<SunIcon />}
+                    />
                 </div>
 
             </nav>

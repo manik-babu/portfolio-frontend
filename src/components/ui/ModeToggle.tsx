@@ -1,33 +1,60 @@
-"use client"
+import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
-import * as React from "react"
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
+type SwitchProps = {
+    value: boolean;
+    onToggle: () => void;
+    iconOn: ReactNode;
+    iconOff: ReactNode;
+    className?: string;
+};
 
-import { Button } from "@/components/ui/button"
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-
-export function ModeToggle() {
-    const { theme, setTheme } = useTheme()
-
+export function ModeToggle({
+    value,
+    onToggle,
+    iconOn,
+    iconOff,
+    className = "",
+}: SwitchProps) {
     return (
-        <div>
-            <Button variant="outline" className={"rounded-full"} size="icon" onClick={() => {
-                if (theme === "light") {
-                    setTheme("dark")
-                } else {
-                    setTheme("light")
-                }
-            }}>
-                <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-                <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-                <span className="sr-only">Toggle theme</span>
-            </Button>
-        </div>
-    )
+        <button
+            className={`bg-card-foreground/15 flex w-12 cursor-pointer rounded-full p-0.5 ${value ? "justify-end" : "justify-start"
+                } ${className}`}
+            onClick={onToggle}
+        >
+            <motion.div
+                className="flex justify-center items-center size-6 rounded-full bg-background"
+                layout
+                transition={{
+                    type: "spring",
+                    duration: 0.6,
+                    bounce: 0.2,
+                }}
+            >
+                {value ? (
+                    <motion.div
+                        key="on"
+                        initial={{ opacity: 0, rotate: -60 }}
+                        animate={{ opacity: 1, rotate: 0 }}
+                        exit={{ opacity: 0, rotate: 60 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex justify-center items-center size-5"
+                    >
+                        {iconOn}
+                    </motion.div>
+                ) : (
+                    <motion.div
+                        key="off"
+                        initial={{ opacity: 0, rotate: 60 }}
+                        animate={{ opacity: 1, rotate: 0 }}
+                        exit={{ opacity: 0, rotate: -60 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex justify-center items-center size-5"
+                    >
+                        {iconOff}
+                    </motion.div>
+                )}
+            </motion.div>
+        </button>
+    );
 }
