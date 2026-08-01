@@ -14,8 +14,11 @@ export const About = () => {
 
             </section>
             <section className="space-y-6">
-                <h2 className="text-4xl font-bold">
-                    About Me
+                <h2 className="text-4xl font-bold flex gap-2">
+                    <span className="text-gray-600 dark:text-gray-300">About</span>
+                    <span className="bg-gradient-to-r from-indigo-600 via-indigo-500 to-blue-500 bg-clip-text text-transparent">
+                        Me
+                    </span>
                 </h2>
                 <div className="space-y-4 text-gray-600 dark:text-gray-300">
                     <p>

@@ -31,7 +31,7 @@ export const Hero = () => {
     const { theme } = useTheme();
     return (
         <KineticGrid
-            background={theme === "dark" ? "#000000" : "#FFFFFF"}
+            background={theme === "dark" ? "#000000" : "#FAFAFA"}
             dotColor={theme === "dark" ? "#2563EB" : "#2563EB"}
             lineColor={theme === "dark" ? "#2563EB" : "#2563EB"}
             trailColor={theme === "dark" ? "#2664EB" : "#2664EB"}
@@ -120,25 +120,25 @@ export const Hero = () => {
                                     Connect With Me:
                                 </span>
                                 <div className="flex items-center gap-3">
-                                    <a
-                                        href="https://github.com"
+                                    <Link
+                                        href="https://github.com/manik-babu"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label="GitHub Profile"
                                         className="p-2.5 rounded-full text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 border border-slate-200 dark:border-slate-700/80 transition-all hover:scale-110"
                                     >
                                         <GithubIcon className="w-4 h-4" />
-                                    </a>
+                                    </Link>
 
-                                    <a
-                                        href="https://linkedin.com"
+                                    <Link
+                                        href="https://linkedin.com/in/md-manik-babu"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label="LinkedIn Profile"
                                         className="p-2.5 rounded-full text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 border border-slate-200 dark:border-slate-700/80 transition-all hover:scale-110"
                                     >
                                         <LinkedinIcon className="w-4 h-4" />
-                                    </a>
+                                    </Link>
 
                                     <a
                                         href="mailto:manikbabu.dev@gmail.com"
