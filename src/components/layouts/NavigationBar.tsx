@@ -14,8 +14,8 @@ export const NavigationBar = () => {
         <header className="fixed top-0 z-50 w-full flex justify-center backdrop-blur-md">
             <nav className="flex w-7xl px-8 h-16 justify-between items-center gap-4">
                 <div className="flex justify-center items-center">
-                    <span className="text-4xl font-bold">Manik</span>
-                    <span className="text-4xl font-bold text-blue-500">.dev</span>
+                    <span className="text-3xl font-bold">Manik</span>
+                    <span className="text-3xl font-bold text-blue-500">.dev</span>
                 </div>
                 <ul className="flex justify-center items-center gap-4">
                     {navItems.map((item) => (
