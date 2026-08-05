@@ -100,8 +100,8 @@ export const Hero = () => {
                                 </Link>
 
                                 <a
-                                    href="/resume.pdf"
-                                    download="Manik_Babu_Resume.pdf"
+                                    href="/docs/Manik_Babu_Full_Stack_Developer_Resume.pdf"
+                                    download="Manik_Babu_Full_Stack_Developer_Resume.pdf"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className={cn(

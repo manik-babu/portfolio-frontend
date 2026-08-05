@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const About = () => {
     return (
-        <div className="grid grid-cols-2 gap-4 py-28 w-7xl px-8">
+        <div className="grid grid-cols-2 gap-4 py-28 max-w-7xl px-8">
             <section className="flex items-center justify-center">
                 {/* <Image
                     src="/images/profile.png"
@@ -13,7 +13,7 @@ export const About = () => {
                 /> */}
 
             </section>
-            <section className="space-y-6">
+            <section className="space-y-6 flex flex-col">
                 <h2 className="text-4xl font-bold flex gap-2">
                     <span className="text-gray-600 dark:text-gray-300">About</span>
                     <span className="bg-gradient-to-r from-indigo-600 via-indigo-500 to-blue-500 bg-clip-text text-transparent">

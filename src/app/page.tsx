@@ -1,7 +1,9 @@
 import { HtmlIcon } from "@/components/icons/Html";
 import { About } from "@/components/sections/About";
 import { Hero } from "@/components/sections/Hero";
+import { ProjectsSection } from "@/components/sections/Projects";
 import { Skills } from "@/components/sections/Skills";
+import { ProjectCard } from "@/components/templates/ProjectCard";
 
 export default function Home() {
   return (
@@ -9,6 +11,7 @@ export default function Home() {
       <Hero />
       <About />
       <Skills />
+      <ProjectsSection />
     </div>
   );
 }

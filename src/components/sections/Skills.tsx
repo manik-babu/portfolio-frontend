@@ -15,6 +15,8 @@ import { RailwayIcon } from "../icons/railway";
 import { PostmanIcon } from "../icons/postman";
 import { NodejsIconAltIcon } from "../icons/nodejs";
 import { GolangIcon } from "../icons/golang";
+import { GlowCard } from "../ui/SpotlightCard";
+import { cn } from "@/lib/utils";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -225,35 +227,58 @@ function SkillBadge({
     accent,
     badgeBg,
     badgeBorder,
+    title
 }: {
     skill: Skill;
     accent: string;
     badgeBg: string;
     badgeBorder: string;
+    title: string;
 }) {
     return (
-        <li
-            className={[
-                "group flex items-center justify-center gap-2.5 px-3.5 py-2 rounded-xl cursor-default select-none",
-                "border transition-all duration-200",
-                "hover:-translate-y-0.5 hover:shadow-md",
-                badgeBg,
-                badgeBorder,
-            ].join(" ")}
-            aria-label={skill.name}
+        // <li
+        //     className={[
+        //         "group flex items-center justify-center gap-2.5 px-3.5 py-2 rounded-xl cursor-default select-none",
+        //         "border transition-all duration-200",
+        //         "hover:-translate-y-0.5 hover:shadow-md",
+        //         badgeBg,
+        //         badgeBorder,
+        //     ].join(" ")}
+        //     aria-label={skill.name}
+        // >
+        //     <span
+        //         className={[
+        //             "flex-shrink-0 transition-transform duration-200 group-hover:scale-110",
+        //             accent,
+        //         ].join(" ")}
+        //     >
+        //         {skill.icon}
+        //     </span>
+        //     <span className="text-sm font-medium text-slate-700 dark:text-slate-200 whitespace-nowrap">
+        //         {skill.name}
+        //     </span>
+        // </li>
+        <span
+            className={cn(
+                "px-2.5 flex justify-center items-center gap-2 py-1 rounded-full text-xs font-medium",
+                title === "Backend" && "bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-300 dark:border-emerald-500/20",
+                title === "Tools" && "bg-sky-50 text-sky-700 border border-sky-200 dark:bg-sky-500/10 dark:text-sky-300 dark:border-sky-500/20",
+                title === "Database" && "bg-amber-50 text-amber-700 border border-amber-200 dark:bg-amber-500/10 dark:text-amber-300 dark:border-amber-500/20",
+                title === "Frontend" && "bg-indigo-50 text-indigo-700 border border-indigo-200 dark:bg-indigo-500/10 dark:text-indigo-300 dark:border-indigo-500/20"
+            )}
         >
             <span
                 className={[
-                    "flex-shrink-0 transition-transform duration-200 group-hover:scale-110",
+                    "shrink-0 transition-transform duration-200 group-hover:scale-110",
                     accent,
                 ].join(" ")}
             >
                 {skill.icon}
             </span>
-            <span className="text-sm font-medium text-slate-700 dark:text-slate-200 whitespace-nowrap">
+            <span className="text-sm font-medium whitespace-nowrap">
                 {skill.name}
             </span>
-        </li>
+        </span>
     );
 }
 
@@ -318,6 +343,7 @@ function CategoryCard({
                             accent={category.accent}
                             badgeBg={category.badgeBg}
                             badgeBorder={category.badgeBorder}
+                            title={category.title}
                         />
                     ))}
                 </ul>
@@ -334,13 +360,6 @@ function SectionHeader() {
 
     return (
         <div ref={ref} className="reveal-card text-center mb-14 sm:mb-16">
-            <div className="inline-flex items-center gap-2 mb-4 px-3.5 py-1.5 rounded-full bg-indigo-500/10 dark:bg-indigo-500/15 border border-indigo-500/20 dark:border-indigo-500/30 text-indigo-600 dark:text-indigo-400 text-xs font-semibold tracking-widest uppercase">
-                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1 1 .316 2.702-1.067 2.702H4.465c-1.383 0-2.067-1.702-1.067-2.702L5 14.5" />
-                </svg>
-                My Toolkit
-            </div>
-
             <h2
                 id="skills-heading"
                 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white"
@@ -381,7 +400,7 @@ export const Skills = () => {
             <section
                 id="skills"
                 aria-labelledby="skills-heading"
-                className="relative w-full py-20 sm:py-24 lg:py-28 overflow-hidden"
+                className="relative w-full py-28 overflow-hidden"
             >
                 {/* Ambient background */}
                 <div className="absolute inset-0 -z-10 pointer-events-none" aria-hidden="true">

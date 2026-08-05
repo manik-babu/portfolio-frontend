@@ -121,6 +121,9 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+.main-bg {
+  @apply bg-linear-to-r from-indigo-600 via-indigo-500 to-blue-500
+}
 
 @layer base {
   * {

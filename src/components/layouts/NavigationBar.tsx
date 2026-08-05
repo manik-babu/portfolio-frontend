@@ -20,7 +20,7 @@ export const NavigationBar = () => {
             <nav className="flex w-7xl px-8 h-16 justify-between items-center gap-4">
                 <div className="flex justify-center items-center">
                     <span className="text-3xl font-bold">Manik</span>
-                    <span className="text-3xl font-bold text-blue-500">.dev</span>
+                    <span className="text-3xl font-bold bg-linear-to-r from-indigo-600 via-indigo-500 to-blue-500 bg-clip-text text-transparent">.dev</span>
                 </div>
                 <ul className="flex justify-center items-center gap-4">
                     {navItems.map((item) => (
