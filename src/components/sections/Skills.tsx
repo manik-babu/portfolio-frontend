@@ -236,28 +236,6 @@ function SkillBadge({
     title: string;
 }) {
     return (
-        // <li
-        //     className={[
-        //         "group flex items-center justify-center gap-2.5 px-3.5 py-2 rounded-xl cursor-default select-none",
-        //         "border transition-all duration-200",
-        //         "hover:-translate-y-0.5 hover:shadow-md",
-        //         badgeBg,
-        //         badgeBorder,
-        //     ].join(" ")}
-        //     aria-label={skill.name}
-        // >
-        //     <span
-        //         className={[
-        //             "flex-shrink-0 transition-transform duration-200 group-hover:scale-110",
-        //             accent,
-        //         ].join(" ")}
-        //     >
-        //         {skill.icon}
-        //     </span>
-        //     <span className="text-sm font-medium text-slate-700 dark:text-slate-200 whitespace-nowrap">
-        //         {skill.name}
-        //     </span>
-        // </li>
         <span
             className={cn(
                 "px-2.5 flex justify-center items-center gap-2 py-1 rounded-full text-xs font-medium",
