@@ -61,7 +61,7 @@ export function ProjectDetailsDialog({
 }: ProjectDetailsDialogProps) {
   return (
     <Dialog open={open} onOpenChange={(next) => !next && onOpenChange(false)}>
-      <DialogContent className="flex h-[80vh] max-w-5xl! p-0 flex-col gap-0">
+      <DialogContent className="flex h-[80vh] w-[calc(100%-2rem)] max-w-5xl! p-0 flex-col gap-0">
         {/* Header */}
         <DialogHeader className="space-y-2 border-b py-4 px-6">
           <DialogTitle className="text-xl font-semibold tracking-tight">
@@ -70,7 +70,7 @@ export function ProjectDetailsDialog({
         </DialogHeader>
 
         {/* Scrollable body */}
-        <ScrollArea className="h-[calc(100%-128px)] px-6">
+        <ScrollArea className="flex-1 min-h-0 px-6">
           <section className="space-y-2 mt-6">
             <h3 className="text-sm font-semibold text-foreground">
               Description
