@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const About = () => {
     return (
-        <div className="grid grid-cols-2 gap-4 py-28 max-w-7xl px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-28 max-w-7xl px-8">
             <section className="flex items-center justify-center">
                 {/* <Image
                     src="/images/profile.png"
