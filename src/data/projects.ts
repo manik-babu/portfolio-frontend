@@ -19,7 +19,7 @@ export const projects: Project[] = [
         },
         details: {
             title: "CampusOS - Full Stack University Management System",
-            description: "A full-stack university management system that streamlines administrative workflows and enhances student engagement through integrated academic and campus services.",
+            description: "A full-stack university management system that streamlines administrative workflows and enhances student engagement through integrated academic and campus services. A full-stack university management system that streamlines administrative workflows and enhances student engagement through integrated academic and campus services. A full-stack university management system that streamlines administrative workflows and enhances student engagement through integrated academic and campus services.",
             features: [
                 "Student information management system",
                 "Course management system",

@@ -2,15 +2,20 @@
 
 import { projects } from "@/data/projects";
 import { ProjectCard } from "../templates/ProjectCard";
+import { Separator } from "../ui/separator";
 
 export const ProjectsSection = () => {
 
     return (
         <div className="space-y-4 py-28">
             <SectionHeader />
-            <div className="flex flex-col items-center gap-8">
+            <div className="flex max-w-7xl flex-col items-center gap-8 px-8">
                 {projects.map((project, index) => (
-                    <ProjectCard key={index} {...project} isLeft={index % 2 === 1} />
+                    <>
+                        <ProjectCard key={index} {...project} isLeft={index % 2 === 1} />
+                        <Separator />
+                    </>
+
                 ))}
             </div>
         </div>
