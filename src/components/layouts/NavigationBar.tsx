@@ -17,7 +17,7 @@ export const NavigationBar = () => {
     const isDark = resolvedTheme === "dark";
     return (
         <header className="fixed top-0 z-50 w-full flex justify-center backdrop-blur-md">
-            <nav className="flex w-7xl px-8 h-16 justify-between items-center gap-4">
+            <nav className="flex w-7xl px-8 h-15 justify-between items-center gap-4 border-b">
                 <div className="flex justify-center items-center">
                     <span className="text-3xl font-bold">Manik</span>
                     <span className="text-3xl font-bold bg-linear-to-r from-indigo-600 via-indigo-500 to-blue-500 bg-clip-text text-transparent">.dev</span>
