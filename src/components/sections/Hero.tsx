@@ -56,16 +56,6 @@ export const Hero = () => {
 
                         {/* Left Column - Hero Text Content */}
                         <div className="lg:col-span-7 flex flex-col items-start text-left space-y-6">
-
-                            {/* Status / Availability Badge */}
-                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/20 dark:border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-semibold tracking-wide uppercase shadow-xs">
-                                <span className="relative flex h-2 w-2">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                                </span>
-                                Available for New Opportunities
-                            </div>
-
                             {/* Headline & Title */}
                             <div className="space-y-3">
                                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
