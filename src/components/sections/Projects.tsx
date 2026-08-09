@@ -11,10 +11,10 @@ export const ProjectsSection = () => {
             <SectionHeader />
             <div className="flex max-w-7xl flex-col items-center gap-8 px-8">
                 {projects.map((project, index) => (
-                    <>
-                        <ProjectCard key={index} {...project} isLeft={index % 2 === 1} />
+                    <div key={index}>
+                        <ProjectCard  {...project} isLeft={index % 2 === 1} />
                         <Separator />
-                    </>
+                    </div>
 
                 ))}
             </div>

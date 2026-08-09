@@ -40,7 +40,7 @@ export const Hero = () => {
             strength={4}
             trail={true}
         >
-            <section className="relative min-h-[85vh] w-full flex items-center justify-center overflow-hidden py-12 lg:py-20">
+            <section id="intro" className="relative min-h-[85vh] w-full flex items-center justify-center overflow-hidden py-12 lg:py-20">
                 {/* Background Subtle Gradient & Grid Layer */}
                 <div className="absolute inset-0 -z-10 pointer-events-none">
                     {/* Ambient Glow Orbs */}
