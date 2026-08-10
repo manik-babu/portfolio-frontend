@@ -269,7 +269,7 @@ export function ContactMe({
   return (
     <section aria-labelledby={`${idPrefix}-heading`} id="contact">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <div className="mb-10 max-w-2xl sm:mb-14">
+        <div className="mb-10 max-w-2xl sm:mb-14 ">
           <h2
             id={`${idPrefix}-heading`}
             className="mt-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
@@ -279,9 +279,9 @@ export function ContactMe({
           <p className="mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-300">{description}</p>
         </div>
 
-        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border border-slate-200  lg:grid-cols-5">
+        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border border border-slate-200/80 dark:border-slate-700/50  lg:grid-cols-5">
           {/* Form */}
-          <div className="bg-white p-6 sm:p-10 lg:col-span-3">
+          <div className="bg-white/70 dark:bg-slate-900/60 p-6 sm:p-10 lg:col-span-3">
             <form noValidate onSubmit={handleSubmit} className="space-y-6">
               {/* Honeypot field — hidden from sighted + AT users, visible to bots that fill everything */}
               <div className="hidden" aria-hidden="true">
@@ -480,7 +480,7 @@ function Field({
 }: FieldProps) {
   const errorId = `${id}-error`;
   const sharedClasses =
-    "block w-full rounded-lg border bg-white px-3.5 py-2.5 text-sm text-slate-900 transition placeholder:text-slate-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-1 " +
+    "block w-full rounded-lg border border-slate-200/80 dark:border-slate-700/50 px-3.5 py-2.5 text-sm text-slate-900 transition placeholder:text-slate-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-1 " +
     (error ? "border-red-400" : "border-slate-300 hover:border-slate-400");
 
   return (
