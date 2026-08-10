@@ -283,7 +283,7 @@ function CategoryCard({
                     "h-full rounded-2xl p-6 sm:p-7",
                     "bg-white/70 dark:bg-slate-900/60",
                     "border border-slate-200/80 dark:border-slate-700/50",
-                    "backdrop-blur-sm shadow-sm hover:shadow-md",
+                    "backdrop-blur-sm",
                     "transition-shadow duration-300",
                 ].join(" ")}
             >

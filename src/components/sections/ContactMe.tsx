@@ -145,14 +145,14 @@ export function ContactMe({
   heading = "Let's build something",
   eyebrow = "// contact",
   description = "Have a project, a role, or just a gnarly bug you want a second pair of eyes on? Send a message and I'll get back to you within a couple of days.",
-  name = "Jordan Rivera",
+  name = "Md Manik Babu",
   role = "Full-Stack Web Developer",
-  email = "jordan@example.dev",
+  email = "manikbabu.dev@gmail.com",
   location = "Remote — GMT+6",
   available = true,
   socials = [
-    { label: "GitHub", href: "https://github.com/" },
-    { label: "LinkedIn", href: "https://linkedin.com/" },
+    { label: "GitHub", href: "https://github.com/manik-babu" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/md-manik-babu" },
   ],
   action = "/api/contact",
 }: ContactMeProps) {
@@ -267,20 +267,19 @@ export function ContactMe({
   const fieldError = (field: FieldName) => (touched[field] ? errors[field] : undefined);
 
   return (
-    <section aria-labelledby={`${idPrefix}-heading`} className="bg-white">
+    <section aria-labelledby={`${idPrefix}-heading`} id="contact">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="mb-10 max-w-2xl sm:mb-14">
-          <p className="font-mono text-sm font-medium tracking-wide text-amber-700">{eyebrow}</p>
           <h2
             id={`${idPrefix}-heading`}
-            className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl"
+            className="mt-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
           >
             {heading}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-600">{description}</p>
+          <p className="mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-300">{description}</p>
         </div>
 
-        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border border-slate-200 shadow-sm lg:grid-cols-5">
+        <div className="grid grid-cols-1 overflow-hidden rounded-2xl border border-slate-200  lg:grid-cols-5">
           {/* Form */}
           <div className="bg-white p-6 sm:p-10 lg:col-span-3">
             <form noValidate onSubmit={handleSubmit} className="space-y-6">
@@ -481,7 +480,7 @@ function Field({
 }: FieldProps) {
   const errorId = `${id}-error`;
   const sharedClasses =
-    "block w-full rounded-lg border bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-sm transition placeholder:text-slate-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-1 " +
+    "block w-full rounded-lg border bg-white px-3.5 py-2.5 text-sm text-slate-900 transition placeholder:text-slate-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-1 " +
     (error ? "border-red-400" : "border-slate-300 hover:border-slate-400");
 
   return (
