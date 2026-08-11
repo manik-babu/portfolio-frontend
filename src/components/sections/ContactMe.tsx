@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useId, useRef, useState } from "react";
-
+import { Phone } from "lucide-react"
 /**
  * ContactMe
  * ---------------------------------------------------------------------------
@@ -38,6 +38,7 @@ export interface ContactMeProps {
   name?: string;
   role?: string;
   email?: string;
+  phone?: string;
   location?: string;
   available?: boolean;
   socials?: { label: string; href: string }[];
@@ -148,6 +149,7 @@ export function ContactMe({
   name = "Md Manik Babu",
   role = "Full-Stack Web Developer",
   email = "manikbabu.dev@gmail.com",
+  phone = "+8801571501672",
   location = "Remote — GMT+6",
   available = true,
   socials = [
@@ -161,7 +163,9 @@ export function ContactMe({
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [statusMessage, setStatusMessage] = useState<string>("");
-  const [copied, setCopied] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
+  const [phoneCopied, setPhoneCopied] = useState(false);
+
 
   const formStartedAt = useRef<number>(Date.now());
   const idPrefix = useId();
@@ -257,12 +261,21 @@ export function ContactMe({
   const handleCopyEmail = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(email);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
+      setEmailCopied(true);
+      window.setTimeout(() => setEmailCopied(false), 2000);
     } catch {
       // Clipboard API unavailable — no-op, the email is still visible/selectable.
     }
   }, [email]);
+  const handleCopyPhone = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(phone);
+      setPhoneCopied(true);
+      window.setTimeout(() => setPhoneCopied(false), 2000);
+    } catch {
+      // Clipboard API unavailable — no-op, the email is still visible/selectable.
+    }
+  }, [phone]);
 
   const fieldError = (field: FieldName) => (touched[field] ? errors[field] : undefined);
 
@@ -284,7 +297,7 @@ export function ContactMe({
           <div className="bg-white/70 dark:bg-slate-900/60 p-6 sm:p-10 lg:col-span-3">
             <form noValidate onSubmit={handleSubmit} className="space-y-6">
               {/* Honeypot field — hidden from sighted + AT users, visible to bots that fill everything */}
-              <div className="hidden" aria-hidden="true">
+              {/* <div className="hidden" aria-hidden="true">
                 <label htmlFor={`${idPrefix}-company`}>Company</label>
                 <input
                   id={`${idPrefix}-company`}
@@ -295,7 +308,7 @@ export function ContactMe({
                   value={form.company}
                   onChange={handleChange("company" as FieldName)}
                 />
-              </div>
+              </div> */}
 
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <Field
@@ -409,9 +422,27 @@ export function ContactMe({
                     type="button"
                     onClick={handleCopyEmail}
                     className="shrink-0 rounded-md p-1.5 text-slate-500 transition hover:bg-white/5 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
-                    aria-label={copied ? "Email copied" : "Copy email address"}
+                    aria-label={emailCopied ? "Email copied" : "Copy email address"}
                   >
-                    {copied ? (
+                    {emailCopied ? (
+                      <IconCheck className="h-4 w-4 text-emerald-400" aria-hidden="true" />
+                    ) : (
+                      <IconCopy className="h-4 w-4" aria-hidden="true" />
+                    )}
+                  </button>
+                </div>
+                <div className="flex items-center justify-between gap-3">
+                  <span className="flex min-w-0 items-center gap-2 text-slate-400">
+                    <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
+                    <span className="truncate">{phone}</span>
+                  </span>
+                  <button
+                    type="button"
+                    onClick={handleCopyPhone}
+                    className="shrink-0 rounded-md p-1.5 text-slate-500 transition hover:bg-white/5 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                    aria-label={phoneCopied ? "Phone copied" : "Copy phone number"}
+                  >
+                    {phoneCopied ? (
                       <IconCheck className="h-4 w-4 text-emerald-400" aria-hidden="true" />
                     ) : (
                       <IconCopy className="h-4 w-4" aria-hidden="true" />
@@ -480,12 +511,12 @@ function Field({
 }: FieldProps) {
   const errorId = `${id}-error`;
   const sharedClasses =
-    "block w-full rounded-lg border border-slate-200/80 dark:border-slate-700/50 px-3.5 py-2.5 text-sm text-slate-900 transition placeholder:text-slate-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-1 " +
+    "block w-full rounded-lg border border-slate-200/80 dark:border-slate-700/50 px-3.5 py-2.5 text-sm text-slate-900 transition placeholder:text-slate-400" +
     (error ? "border-red-400" : "border-slate-300 hover:border-slate-400");
 
   return (
     <div>
-      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-slate-800">
+      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-gray-900 dark:text-white">
         {label}
       </label>
       {as === "textarea" ? (
