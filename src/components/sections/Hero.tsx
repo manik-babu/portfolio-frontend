@@ -31,7 +31,7 @@ export const Hero = () => {
     const { theme } = useTheme();
     return (
         <KineticGrid
-            background={theme === "dark" ? "#000000" : "#FAFAFA"}
+            background={theme === "dark" ? "#121212" : "#FAFAFA"}
             dotColor={theme === "dark" ? "#2563EB" : "#2563EB"}
             lineColor={theme === "dark" ? "#2563EB" : "#2563EB"}
             trailColor={theme === "dark" ? "#2664EB" : "#2664EB"}
@@ -82,7 +82,7 @@ export const Hero = () => {
                                     href="#projects"
                                     className={cn(
                                         buttonVariants({ variant: "default", size: "lg" }),
-                                        "rounded-full px-7 bg-indigo-600 hover:bg-indigo-700 text-white font-medium shadow-lg shadow-indigo-600/25 transition-all hover:shadow-indigo-600/40 hover:-translate-y-0.5"
+                                        "rounded-full px-7 bg-linear-to-r from-indigo-600 via-indigo-500 to-blue-500 text-white font-medium transition-all hover:-translate-y-0.5"
                                     )}
                                 >
                                     View Projects

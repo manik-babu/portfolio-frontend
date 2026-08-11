@@ -7,7 +7,7 @@ import { Separator } from "../ui/separator";
 export const ProjectsSection = () => {
 
     return (
-        <div className="space-y-4 py-28">
+        <div id="projects" className="space-y-4 py-28">
             <SectionHeader />
             <div className="flex max-w-7xl flex-col items-center gap-8 px-8">
                 {projects.map((project, index) => (
@@ -26,7 +26,6 @@ function SectionHeader() {
     return (
         <div className="text-center mb-14 sm:mb-16">
             <h2
-                id="projects"
                 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white"
             >
                 Selected {" "}

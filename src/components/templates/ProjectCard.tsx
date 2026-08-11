@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dialog"
 import { useState } from "react"
 import { ProjectDetailsDialog } from "./ProjectDetailsDialog"
+import { FlowButton } from "../ui/flow-button"
 
 
 
@@ -133,6 +134,7 @@ export const ProjectCard = ({ isLeft, images, title, description, liveDemo, gith
                             className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                         />
                     </button>
+                    {/* <FlowButton className="w-fit!" onClick={() => setOpen(true)} text="View Project Details" /> */}
                     <ProjectDetailsDialog open={open} onOpenChange={(open) => setOpen(open)} details={details} />
                     {/* <Dialog open={open}>
                         <DialogContent className="w-[80vw] h-[80vh] overflow-auto">

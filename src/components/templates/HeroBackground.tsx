@@ -33,7 +33,7 @@ interface KineticGridProps {
 export default function KineticGrid(props: KineticGridProps) {
     props = { ...COMPONENT_DEFAULTS, ...props }
     const {
-        background = "#000000",
+        background = "#121212",
         dotColor = "#FFFFFF",
         lineColor = "#2563EB",
         trailColor = "#2664EB",
@@ -344,7 +344,7 @@ export default function KineticGrid(props: KineticGridProps) {
 }
 
 const COMPONENT_DEFAULTS = {
-    background: "#000000",
+    background: "#121212",
     dotColor: "#FFFFFF",
     lineColor: "#80ACFF",
     trail: true,

@@ -51,7 +51,7 @@ export const NavigationBar = () => {
                         .dev
                     </span>
                 </div>
-                <ul className="flex justify-center items-center gap-4">
+                <ul className="flex justify-center items-center gap-6">
                     {navItems.map((item) => (
                         <li key={item.name}>
                             <Link
