@@ -511,7 +511,7 @@ function Field({
 }: FieldProps) {
   const errorId = `${id}-error`;
   const sharedClasses =
-    "block w-full rounded-lg border border-slate-200/80 dark:border-slate-700/50 px-3.5 py-2.5 text-sm text-slate-900 transition placeholder:text-slate-400" +
+    "block w-full rounded-lg border border-slate-200/80 dark:border-slate-700/50 px-3.5 py-2.5 text-sm text-slate-900 transition placeholder:text-emerald-300!" +
     (error ? "border-red-400" : "border-slate-300 hover:border-slate-400");
 
   return (
