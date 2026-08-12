@@ -2,6 +2,7 @@
 
 import { useCallback, useId, useRef, useState } from "react";
 import { Phone } from "lucide-react"
+import { sendEmail } from "@/actions/email";
 /**
  * ContactMe
  * ---------------------------------------------------------------------------
@@ -226,21 +227,10 @@ export function ContactMe({
       setStatusMessage("");
 
       try {
-        const res = await fetch(action, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: form.name.trim(),
-            email: form.email.trim(),
-            subject: form.subject.trim(),
-            message: form.message.trim(),
-            company: form.company, // honeypot passed through for server-side check
-          }),
-        });
+        const res = await sendEmail(form);
 
         if (!res.ok) {
-          const data = await res.json().catch(() => null);
-          throw new Error(data?.error || "Something went wrong. Please try again.");
+          throw new Error("Something went wrong. Please try again.");
         }
 
         setStatus("success");
