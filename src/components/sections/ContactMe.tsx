@@ -282,15 +282,7 @@ export function ContactMe({
   return (
     <section aria-labelledby={`${idPrefix}-heading`} id="contact">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <div className="mb-10 max-w-2xl sm:mb-14 ">
-          <h2
-            id={`${idPrefix}-heading`}
-            className="mt-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
-          >
-            {heading}
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-300">{description}</p>
-        </div>
+        <SectionHeader />
 
         <div className="grid grid-cols-1 overflow-hidden rounded-2xl border border border-slate-200/80 dark:border-slate-700/50  lg:grid-cols-5">
           {/* Form */}
@@ -494,6 +486,24 @@ interface FieldProps {
   autoComplete?: string;
   as?: "input" | "textarea";
   rows?: number;
+}
+function SectionHeader() {
+  return (
+    <div className="text-center mb-14 sm:mb-16">
+      <h2
+        className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white"
+      >
+        Let's {" "}
+        <span className="bg-gradient-to-r from-indigo-600 via-indigo-500 to-blue-500 bg-clip-text text-transparent">
+          Build Something
+        </span>
+      </h2>
+
+      <p className="mt-4 text-base sm:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+        Have a project, a role, or just a gnarly bug you want a second pair of eyes on? Send a message and I'll get back to you within a couple of days.
+      </p>
+    </div>
+  );
 }
 
 function Field({
