@@ -278,20 +278,6 @@ export function ContactMe({
           {/* Form */}
           <div className="bg-white/70 dark:bg-slate-900/60 p-6 sm:p-10 lg:col-span-3">
             <form noValidate onSubmit={handleSubmit} className="space-y-6">
-              {/* Honeypot field — hidden from sighted + AT users, visible to bots that fill everything */}
-              {/* <div className="hidden" aria-hidden="true">
-                <label htmlFor={`${idPrefix}-company`}>Company</label>
-                <input
-                  id={`${idPrefix}-company`}
-                  name="company"
-                  type="text"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  value={form.company}
-                  onChange={handleChange("company" as FieldName)}
-                />
-              </div> */}
-
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <Field
                   id={`${idPrefix}-name`}
