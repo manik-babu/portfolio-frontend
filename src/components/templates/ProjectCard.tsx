@@ -3,17 +3,8 @@ import ImageSlider from "./ImageSlider"
 import { GithubIconTheme } from "../icons/githubIcon"
 import Link from "next/link"
 import { Project } from "@/@types/project"
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-} from "@/components/ui/dialog"
 import { useState } from "react"
 import { ProjectDetailsDialog } from "./ProjectDetailsDialog"
-import { FlowButton } from "../ui/flow-button"
 
 
 
