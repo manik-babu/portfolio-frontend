@@ -1,3 +1,3 @@
 # Portfolio
 
-This is my first portfolio.
+This is my first portfolio. I hope you like it.
