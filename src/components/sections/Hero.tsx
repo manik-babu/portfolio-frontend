@@ -2,12 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import {
     ArrowRight,
     FileDown,
     Mail,
-    Terminal,
-    CheckCircle2,
 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -28,13 +27,20 @@ const LinkedinIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
 );
 
 export const Hero = () => {
-    const { theme } = useTheme();
+    const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => setMounted(true), []);
+
+    // Default to dark until mounted so server/client initial renders match.
+    const isDark = mounted ? resolvedTheme === "dark" : true;
+
     return (
         <KineticGrid
-            background={theme === "dark" ? "#121212" : "#FAFAFA"}
-            dotColor={theme === "dark" ? "#2563EB" : "#2563EB"}
-            lineColor={theme === "dark" ? "#2563EB" : "#2563EB"}
-            trailColor={theme === "dark" ? "#2664EB" : "#2664EB"}
+            background={isDark ? "#121212" : "#FAFAFA"}
+            dotColor="#2563EB"
+            lineColor="#2563EB"
+            trailColor="#2664EB"
             spacing={50}
             radius={200}
             strength={4}
