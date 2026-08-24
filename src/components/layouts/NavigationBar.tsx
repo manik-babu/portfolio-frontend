@@ -15,8 +15,14 @@ const navItems = [
 
 export const NavigationBar = () => {
     const { resolvedTheme, setTheme } = useTheme();
-    const isDark = resolvedTheme === "dark";
+    const [mounted, setMounted] = useState(false);
     const [activeId, setActiveId] = useState("intro");
+
+    useEffect(() => setMounted(true), []);
+
+    // Until mounted, resolvedTheme is undefined/system – default to false
+    // to keep server and client initial renders identical.
+    const isDark = mounted ? resolvedTheme === "dark" : false;
 
     useEffect(() => {
         const sections = navItems
