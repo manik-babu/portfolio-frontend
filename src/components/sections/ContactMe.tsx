@@ -354,7 +354,7 @@ export function ContactMe({
                   }
                 </button>
 
-                <div aria-live="polite" className="min-h-[1.25rem] text-sm">
+                <div aria-live="polite" className="min-h-5 text-sm">
                   {status === "success" && (
                     <p className="flex items-center gap-1.5 font-medium text-emerald-700">
                       <IconCheck className="h-4 w-4" aria-hidden="true" />
