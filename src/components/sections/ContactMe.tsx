@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useId, useRef, useState } from "react";
-import { Phone } from "lucide-react"
+import { ArrowUpRight, Phone, Send } from "lucide-react"
 import { sendEmail } from "@/actions/email";
 /**
  * ContactMe
@@ -326,13 +326,32 @@ export function ContactMe({
               />
 
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <button
+                {/* <button
                   type="submit"
                   disabled={status === "loading"}
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {status === "loading" && <IconSpinner className="h-4 w-4" aria-hidden="true" />}
                   {status === "loading" ? "Sending…" : "Send message"}
+                </button> */}
+                <button
+                  type="submit"
+                  className="group inline-flex items-center justify-center gap-2 w-fit
+                                   px-5 py-2.5 rounded-lg
+                                   bg-linear-to-r from-indigo-600 via-indigo-500 to-blue-500 text-white cursor-pointer text-sm font-semibold
+                                   hover:bg-primary/90
+                                   transition-all duration-300"
+                >
+                  {status === "loading" ? "Sending…" : "Send message"}
+                  {
+                    status !== "loading" && (
+                      <Send
+                        size={16}
+                        className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      />
+                    )
+
+                  }
                 </button>
 
                 <div aria-live="polite" className="min-h-[1.25rem] text-sm">
