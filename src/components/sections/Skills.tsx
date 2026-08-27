@@ -17,6 +17,7 @@ import { NodejsIconAltIcon } from "../icons/nodejs";
 import { GolangIcon } from "../icons/golang";
 import { GlowCard } from "../ui/SpotlightCard";
 import { cn } from "@/lib/utils";
+import { GsapIcon } from "../icons/gsap";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -137,6 +138,7 @@ const SKILL_CATEGORIES: SkillCategory[] = [
             { name: "Shadcn UI", icon: <Icons.Shadcn /> },
             { name: "Redux", icon: <Icons.Redux /> },
             { name: "Tanstack Query", icon: <TanstackIcon /> },
+            { name: "GSAP", icon: <GsapIcon /> }
         ],
     },
     {
