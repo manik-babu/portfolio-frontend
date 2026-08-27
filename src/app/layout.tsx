@@ -5,6 +5,8 @@ import { NavigationBar } from "@/components/layouts/NavigationBar";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import MouseEffects from "@/components/ui/MouseEffect";
+import { ReactLenis } from "lenis/react";
+import "lenis/dist/lenis.css";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -47,7 +49,16 @@ export default function RootLayout({
         >
           <NavigationBar />
           <MouseEffects />
-          {children}
+          <ReactLenis
+            root
+            options={{
+              lerp: 0.1,
+              duration: 1.2,
+              smoothWheel: true,
+            }}
+          >
+            {children}
+          </ReactLenis>
         </ThemeProvider>
       </body>
     </html>
