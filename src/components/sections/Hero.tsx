@@ -37,7 +37,7 @@ export const Hero = () => {
 
     return (
         <KineticGrid
-            background={isDark ? "#121212" : "#FAFAFA"}
+            background={isDark ? "#16181D" : "#FAFAFA"}
             dotColor="#2563EB"
             lineColor="#2563EB"
             trailColor="#2664EB"
