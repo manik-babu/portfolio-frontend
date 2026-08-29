@@ -2,7 +2,14 @@
 This is my first portfolio. I hope you like it.
 
 ## Tech Stack 
+
+### Frontend
 - Next JS
+- Tailwind CSS
+- Shadcn/UI
+- GSAP (ScrollTrigger, Locomotive Scroll)
+
+### Backend
 - Node JS
 - Express JS
 
