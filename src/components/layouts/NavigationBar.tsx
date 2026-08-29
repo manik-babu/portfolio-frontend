@@ -33,7 +33,13 @@ export const NavigationBar = () => {
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        setActiveId(entry.target.id);
+                        const id = entry.target.id;
+                        setActiveId(id);
+                        // Keep URL hash in sync so clicking a nav link
+                        // always triggers navigation, even to the current section.
+                        if (window.location.hash !== `#${id}`) {
+                            history.replaceState(null, "", `#${id}`);
+                        }
                     }
                 });
             },
