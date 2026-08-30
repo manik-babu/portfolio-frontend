@@ -7,6 +7,7 @@ This is my first portfolio. I hope you like it.
 - HTML
 - CSS
 - JavaScript
+- TypeScript
 - Next JS
 - Tailwind CSS
 - Shadcn/UI
