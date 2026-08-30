@@ -16,7 +16,7 @@ This is my first portfolio. I hope you like it.
 ### Backend
 - Node JS
 - Express JS
-- PostreSQL
+- PostgreSQL
 - Prisma
 
 ## Live Portfolio
