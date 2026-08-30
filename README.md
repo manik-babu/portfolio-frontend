@@ -4,6 +4,8 @@ This is my first portfolio. I hope you like it.
 ## Tech Stack 
 
 ### Frontend
+- HTML
+
 - Next JS
 - Tailwind CSS
 - Shadcn/UI
