@@ -17,6 +17,7 @@ This is my first portfolio. I hope you like it.
 - Node JS
 - Express JS
 - PostreSQL
+- Prisma
 
 ## Live Portfolio
 [https://manikbabu.vercel.app](https://manikbabu.vercel.app)
