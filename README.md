@@ -5,7 +5,7 @@ This is my first portfolio. I hope you like it.
 
 ### Frontend
 - HTML
-
+- CSS
 - Next JS
 - Tailwind CSS
 - Shadcn/UI
