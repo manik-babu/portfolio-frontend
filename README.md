@@ -16,6 +16,7 @@ This is my first portfolio. I hope you like it.
 ### Backend
 - Node JS
 - Express JS
+- PostreSQL
 
 ## Live Portfolio
 [https://manikbabu.vercel.app](https://manikbabu.vercel.app)
