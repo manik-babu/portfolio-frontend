@@ -307,9 +307,7 @@ function NavButton({ direction, onClick, label, disabled }: NavButtonProps) {
   )
 }
 
-/* ─────────────────────────────────────────────
-   DotButton sub-component
-───────────────────────────────────────────── */
+// DotButton sub-component
 interface DotButtonProps {
   index: number
   isActive: boolean
