@@ -83,9 +83,7 @@ function ChevronRight({ className }: { className?: string }) {
   )
 }
 
-/* ─────────────────────────────────────────────
-   Main component
-───────────────────────────────────────────── */
+// ImageSlider main component
 export default function ImageSlider({ images }: ImageSliderProps) {
   const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(0)
