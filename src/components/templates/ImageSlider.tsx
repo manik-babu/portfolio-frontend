@@ -265,9 +265,7 @@ export default function ImageSlider({ images }: ImageSliderProps) {
   )
 }
 
-/* ─────────────────────────────────────────────
-   NavButton sub-component
-───────────────────────────────────────────── */
+// NavButton sub-component
 interface NavButtonProps {
   direction: 'prev' | 'next'
   onClick: () => void
