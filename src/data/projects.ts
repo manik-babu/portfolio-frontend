@@ -42,7 +42,7 @@ export const projects: Project[] = [
         images: [
             { src: "/images/project1/image1.png", alt: "Home page image" },
             { src: "/images/project1/image2.png", alt: "Login page image" },
-            { src: "/images/project1/image3.png", alt: "About image" },
+            // { src: "/images/project1/image3.png", alt: "About image" },
         ],
         title: "MediStore",
         description: `MediStore is a full-stack, multi-vendor online pharmacy platform that enables nationwide medicine sales through
