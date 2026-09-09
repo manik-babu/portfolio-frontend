@@ -13,6 +13,11 @@ My First Portfolio Website
 - Shadcn/UI
 - GSAP (ScrollTrigger, Locomotive Scroll)
 
+### Backend
+- Node JS
+- Express JS
+- PostgreSQL
+- Prisma
 
 ## Live Portfolio
 [https://manikbabu.vercel.app](https://manikbabu.vercel.app)
